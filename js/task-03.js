@@ -13,4 +13,21 @@ const images = [
 	},
 ];
 
-const galleryList = document.querySelector("ul.gallery");
+const list = document.querySelector("ul.gallery");
+
+list.style.display = "flex";
+list.style.alignItems = "center";
+list.style.justifyContent = "space-between";
+
+const arrayImages = images
+	.map((image) => `<li><img src="${image.url}" alt="${image.alt}"></li>`)
+	.join("");
+
+list.insertAdjacentHTML("beforeend", arrayImages);
+
+const img = document.querySelectorAll("img");
+img.forEach((element) => {
+	element.style.display = "block";
+	element.style.width = "100%";
+	element.style.height = "100px";
+});
