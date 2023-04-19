@@ -1,7 +1,5 @@
 const input = document.querySelector("#validation-input");
 
-input.addEventListener("blur", onInputCheck);
-
 function onInputCheck(event) {
 	if (event.currentTarget.value.length === 6) {
 		event.currentTarget.classList.add("valid");
@@ -11,3 +9,5 @@ function onInputCheck(event) {
 		event.currentTarget.classList.remove("valid");
 	}
 }
+
+input.addEventListener("blur", onInputCheck);
