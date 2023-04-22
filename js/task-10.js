@@ -33,7 +33,8 @@ function createBoxes(amount) {
 
 function destroyBoxes() {
 	boxes.innerHTML = " ";
-	input.innerHTML = " ";
+	input.value = "";
+	inputValue = 0;
 }
 
 input.addEventListener("input", getInput);
