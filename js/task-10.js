@@ -17,18 +17,17 @@ function getInput(event) {
 }
 
 function createBoxes(amount) {
+	// boxes.style
 	const arrayOfDivs = [];
 	let size = 30;
 	for (let i = 0; i < amount; i++) {
-		const div = document.createElement("div");
-		div.innerHTML = `<div style="
-		height:${size + 10 * i}px;
-		weight:${size + 10 * i}px;
-		background-color: ${getRandomHexColor()}
-		"></div>`;
+		const div = `<div style="height:${size + 10 * i}px;width:${
+			size + 10 * i
+		}px;background-color: ${getRandomHexColor()}"></div>`;
 		arrayOfDivs.push(div);
 	}
-	boxes.append(...arrayOfDivs);
+	const markup = arrayOfDivs.join("");
+	boxes.innerHTML = markup;
 }
 
 function destroyBoxes() {
